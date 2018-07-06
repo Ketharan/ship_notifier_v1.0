@@ -1,0 +1,254 @@
+[2018-07-05 11:47:40,972] ERROR {org.ballerinalang.net.http.BallerinaHTTPConnectorListener} - Error in HTTP server connector: Idle timeout triggered before initiating outbound response  
+[2018-07-05 18:44:12,336] ERROR {com.zaxxer.hikari.pool.HikariPool} - HikariPool-1 - Exception during pool initialization. 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:117)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:123)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:367)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:196)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at org.ballerinalang.database.sql.SQLDatasource.buildDataSource(SQLDatasource.java:200)
+	at org.ballerinalang.database.sql.SQLDatasource.init(SQLDatasource.java:65)
+	at org.ballerinalang.database.sql.SQLDatasourceUtils.createSQLDataSource(SQLDatasourceUtils.java:1211)
+	at org.ballerinalang.database.sql.SQLDatasourceUtils.createServerBasedDBClient(SQLDatasourceUtils.java:1140)
+	at org.ballerinalang.database.mysql.CreateClient.execute(CreateClient.java:59)
+	at org.ballerinalang.bre.bvm.BlockingNativeCallableUnit.execute(BlockingNativeCallableUnit.java:35)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNativeCallable(BLangFunctions.java:386)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:257)
+	at org.ballerinalang.bre.bvm.CPU.tryExec(CPU.java:407)
+	at org.ballerinalang.bre.bvm.CPU.exec(CPU.java:148)
+	at org.ballerinalang.bre.bvm.BLangScheduler.executeNow(BLangScheduler.java:80)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNonNativeCallable(BLangFunctions.java:317)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:264)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:244)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:464)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunctions(BLangFunctions.java:135)
+	at org.ballerinalang.util.program.BLangFunctions.invokeEntrypointCallable(BLangFunctions.java:109)
+	at org.ballerinalang.BLangProgramRunner.runMain(BLangProgramRunner.java:70)
+	at org.ballerinalang.launcher.LauncherUtils.runMain(LauncherUtils.java:123)
+	at org.ballerinalang.launcher.LauncherUtils.runProgram(LauncherUtils.java:116)
+	at org.ballerinalang.launcher.Main$RunCmd.execute(Main.java:256)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.ballerinalang.launcher.Main.main(Main.java:66)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+	... 43 more
+ 
+[2018-07-05 21:07:06,914] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-05 21:10:50,326] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 00:47:34,399] ERROR {com.zaxxer.hikari.pool.HikariPool} - HikariPool-1 - Exception during pool initialization. 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:117)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:123)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:367)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:196)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at org.ballerinalang.database.sql.SQLDatasource.buildDataSource(SQLDatasource.java:200)
+	at org.ballerinalang.database.sql.SQLDatasource.init(SQLDatasource.java:65)
+	at org.ballerinalang.database.sql.SQLDatasourceUtils.createSQLDataSource(SQLDatasourceUtils.java:1211)
+	at org.ballerinalang.database.sql.SQLDatasourceUtils.createServerBasedDBClient(SQLDatasourceUtils.java:1140)
+	at org.ballerinalang.database.mysql.CreateClient.execute(CreateClient.java:59)
+	at org.ballerinalang.bre.bvm.BlockingNativeCallableUnit.execute(BlockingNativeCallableUnit.java:35)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNativeCallable(BLangFunctions.java:386)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:257)
+	at org.ballerinalang.bre.bvm.CPU.tryExec(CPU.java:407)
+	at org.ballerinalang.bre.bvm.CPU.exec(CPU.java:148)
+	at org.ballerinalang.bre.bvm.BLangScheduler.executeNow(BLangScheduler.java:80)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNonNativeCallable(BLangFunctions.java:317)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:264)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:244)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:464)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunctions(BLangFunctions.java:135)
+	at org.ballerinalang.util.program.BLangFunctions.invokeEntrypointCallable(BLangFunctions.java:109)
+	at org.ballerinalang.BLangProgramRunner.runMain(BLangProgramRunner.java:70)
+	at org.ballerinalang.launcher.LauncherUtils.runMain(LauncherUtils.java:123)
+	at org.ballerinalang.launcher.LauncherUtils.runProgram(LauncherUtils.java:116)
+	at org.ballerinalang.launcher.Main$RunCmd.execute(Main.java:256)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.ballerinalang.launcher.Main.main(Main.java:66)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+	... 43 more
+ 
+[2018-07-06 00:59:41,297] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:05:38,943] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:09:21,822] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:11:21,840] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 01:30:23,387] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:32:23,223] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 01:35:10,785] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:37:10,637] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 01:49:59,726] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:50:02,250] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:50:02,919] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:50:24,378] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 01:50:24,378] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 01:50:24,378] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 01:50:28,176] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:50:31,626] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:50:53,502] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 01:50:53,502] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 01:53:35,710] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:53:38,131] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 01:55:56,500] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:55:58,735] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 01:57:56,586] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 01:57:58,815] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 02:00:18,183] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:02:00,356] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:03:09,988] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:03:20,831] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:03:35,207] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:03:35,207] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:04:17,639] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:04:33,671] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:05:23,797] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:06:08,111] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:06:10,945] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:06:20,611] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:07:05,973] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:07:05,973] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:07:05,973] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:07:09,197] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:07:19,099] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:07:23,883] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 02:07:28,808] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:07:28,808] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:07:36,826] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:07:43,020] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:08:48,991] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:09:03,653] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:09:14,293] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:09:14,293] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:09:29,577] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:09:51,882] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:09:54,933] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:10:13,971] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:16:00,268] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:16:48,475] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:18:00,340] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 02:18:07,155] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:18:33,439] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:18:48,564] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 02:18:55,728] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:19:08,572] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:20:37,935] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:20:58,972] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:21:36,355] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:21:49,468] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:25:34,519] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:25:37,923] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:25:39,946] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:25:41,922] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:25:47,850] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:25:51,576] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:27:12,661] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:27:12,661] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:27:12,661] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:27:12,661] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:27:12,661] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:27:12,661] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:28:25,811] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:29:13,651] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:29:51,404] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:30:20,595] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:32:04,081] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:32:10,622] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 02:32:13,788] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 02:32:47,720] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 07:04:23,352] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:06:16,383] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 07:06:32,197] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:08:32,055] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 07:09:10,369] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:11:04,169] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:13:04,030] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 07:14:14,969] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:14:20,901] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:16:09,759] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:16:10,659] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:16:10,832] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:16:11,793] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 07:16:11,794] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 07:16:11,793] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 07:16:11,793] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 07:16:11,795] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 07:19:06,154] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:21:05,960] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 07:23:29,177] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:25:29,011] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 07:25:59,295] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:26:07,180] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:26:26,476] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 07:26:26,476] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
+[2018-07-06 07:26:30,338] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:26:36,154] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:37:25,332] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:39:33,184] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:41:33,105] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 07:43:34,676] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:45:34,759] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Idle timeout triggered while writing outbound response  
+[2018-07-06 07:45:50,234] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:49:39,990] ERROR {org.ballerinalang.net.http.HttpUtil} - call failed  
+[2018-07-06 07:50:06,380] ERROR {org.wso2.transport.http.netty.listener.SourceErrorHandler} - Remote client closed connection while writing outbound response  
